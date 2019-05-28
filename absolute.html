@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+
+        <style>
+            #box1 {
+                width: 500px;
+                height: 200px;
+                background-color: gray;
+            }
+
+            #position_absolute_parent {
+                /* position: relative; */
+                width: 500px;
+                /* absolute 속성값은 부모의 높이에 영향을 줄 수 없다. */
+                /* height: 500px; */
+                background-color: yellow;
+            }
+
+            #position_absolute_child {
+                position: absolute;
+                width: 200px;
+                height: 200px;
+                background-color: blue;
+                /* 마진 병합 현상이 일어나지 않는다. */
+                /* margin-top: 100px; */
+                /*
+                    브라우저 왼쪽 상단을 기준으로 top 속성이 적용된다.
+                    단, 부모의 position 속성이 relative일 경우 좌표 기준점이
+                    부모로 바뀐다.
+                 */
+                /* top: 100px; */
+            }
+        </style>
+
+    </head>
+    <body>
+        <div id="box1"></div>
+        <div id="position_absolute_parent">
+            <div id="position_absolute_child"></div>
+        </div>
+    </body>
+</html>
