@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+
+        <style>
+            #box1 {
+                width: 500px;
+                height: 200px;
+                background-color: gray;
+            }
+
+            #position_relative_parent {
+                width: 500px;
+                /* relative 속성값은 부모의 높이에 영향을 줄 수 있다. */
+                /* height: 500px; */
+                background-color: yellow;
+            }
+
+            #position_relative_child {
+                position: relative;
+                width: 200px;
+                height: 200px;
+                background-color: blue;
+                /* 부모 자식간에 발생하는 마진 병합 현상이 일어난다. */
+                /* margin-top:100px; */
+                /* 파란색 박스의 최초 생성 위치를 기준으로 100px 만큼 아래로 이동한다. */
+                /* top: 100px; */
+            }
+        </style>
+
+    </head>
+    <body>
+        <div id="box1"></div>
+        <div id="position_relative_parent">
+            <div id="position_relative_child"></div>
+        </div>
+    </body>
+</html>
