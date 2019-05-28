@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+
+        <style>
+            #box1 {
+                width: 500px;
+                height: 200px;
+                background-color: gray;
+            }
+
+            #position_fixed_parent {
+                width: 500px;
+                /* fixed 속성값은 부모의 높이에 영향을 줄 수 없습니다. */
+                /* 부모의 높이를 주석처리 하면 yellow 영역이 사라진다. */
+                /* height: 500px; */
+                background-color: yellow;
+            }
+
+            #position_fixed_child {
+                /* fixed 속성값은 선택된 태그를 화면에 고정시킵니다. */
+                position: fixed;
+                width: 200px;
+                height: 200px;
+                background-color: blue;
+                /* 마진 병합 현상이 일어나지 않습니다. */
+                /* margin-top: 100px; */
+                /* top 속성을 적용시킬 수 있습니다. */
+                /* top: 100px; */
+
+                /*
+                    여기서 주의할 점.
+                    margin-top과 top은 속성은 다르지만 속성값으로 똑같이 100px을 적용했는데 왜 파란색 박스의 위치가 다를까?
+                    fixed 속성값이 적용된 영역 안에 margin-top 속성을 적용하면 최초 파란색 박스가 생성된 지점을 기준으로
+                    좌표가 설정된다. 하지만 top 속성을 적용하면 항상 브라우저 왼쪽 상단을 기준으로 좌표 기준점이 바뀐다.
+                    따라서 top 속성이 적용된 현재 상태에서는 브라우저를 기준으로 100px 만큼 내려오는 것이다.
+                */
+            }
+
+            #box2 {
+                width: 500px;
+                height: 2000px;
+                background-color: pink;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div id="box1"></div>
+        <div id="position_fixed_parent">
+            <div id="position_fixed_child"></div>
+        </div>
+        <div id="box2"></div>
+    </body>
+</html>
